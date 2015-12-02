@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fillit.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 11:55:53 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/02 20:00:18 by dolewski         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fillit.h"
 #include <stdio.h>
 
@@ -29,7 +17,7 @@ void	fillit(char *file)
 	while (file_content[i])
 	{
 		if (i % 20 == 0)
-			t_grid_verif("%s", ft_strsub(file_content, i - 20, i));
+			t_grid_valid(ft_strsub(file_content, i - 20, i));
 		i++;
 	}
 }
