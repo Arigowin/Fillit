@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 11:56:01 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/02 19:20:32 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/02 20:19:40 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int			t_is_s(char *t_mino);
 int			t_isrev_s(char *t_mino);
 int			t_is_l(char *t_mino);
 int			t_isrev_l(char *t_mino);
+int			t_grid_valid(char *t_mino);
 
 #endif
