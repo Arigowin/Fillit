@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 11:56:01 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/02 17:48:20 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/02 18:53:33 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@
 # include <stdlib.h>
 # include <libft.h>
 
-# define BUFF_SIZE 15
+# define BUFF_SIZE 546
 
-
-t_list				*t_read(char *file);
+char		*t_read(char *file);
+void		ft_error(void);
+void		fillit(char *file);
 
 #endif
