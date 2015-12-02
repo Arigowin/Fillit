@@ -6,12 +6,11 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 15:32:58 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/02 19:09:35 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/02 19:23:56 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 char	*t_read(char *file)
 {
