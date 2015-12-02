@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 12:03:19 by dolewski          #+#    #+#              #
-#    Updated: 2015/12/02 12:56:09 by dolewski         ###   ########.fr        #
+#    Updated: 2015/12/02 14:27:18 by avacher          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ $(OPATH):
 
 clean:
 	@echo "Deleting objs"
-	@/bin/rm-rf $(OPATH)
+	@/bin/rm -rf $(OPATH)
 
 fclean: clean
 	@echo "deleting $(NAME)"
