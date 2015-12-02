@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 12:03:19 by dolewski          #+#    #+#              #
-#    Updated: 2015/12/02 12:56:09 by dolewski         ###   ########.fr        #
+#    Updated: 2015/12/02 16:22:00 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ CFLAGS = -Wall -Werror -Wextra -I $(HPATH)
 
 HEADER = fillit.h
 
-SRC = fillit.c
+SRC = fillit.c \
+	  ft_fillit_read.c
 
 HFILES = $(patsubst %, $(HPATH)/%, $(HEADER))
 CFILES = $(patsubst %, $(CPATH)/%, $(SRC))
@@ -42,14 +43,14 @@ $(OPATH):
 
 clean:
 	@echo "Deleting objs"
-	@/bin/rm-rf $(OPATH)
+	@/bin/rm -rf $(OPATH)
 
 fclean: clean
-	@echo "deleting $(NAME)"
+	@echo "Deleting $(NAME)"
 	@/bin/rm -f $(NAME)
 
-
 re: fclean all
+
 
 # little memo
 # $@ = rule's name
