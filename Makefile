@@ -6,7 +6,11 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 12:03:19 by dolewski          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2015/12/02 14:27:18 by avacher          ###   ########.fr        #
+=======
+#    Updated: 2015/12/02 16:22:00 by dolewski         ###   ########.fr        #
+>>>>>>> david
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +24,8 @@ CFLAGS = -Wall -Werror -Wextra -I $(HPATH)
 
 HEADER = fillit.h
 
-SRC = fillit.c
+SRC = fillit.c \
+	  ft_fillit_read.c
 
 HFILES = $(patsubst %, $(HPATH)/%, $(HEADER))
 CFILES = $(patsubst %, $(CPATH)/%, $(SRC))
@@ -45,11 +50,11 @@ clean:
 	@/bin/rm -rf $(OPATH)
 
 fclean: clean
-	@echo "deleting $(NAME)"
+	@echo "Deleting $(NAME)"
 	@/bin/rm -f $(NAME)
 
-
 re: fclean all
+
 
 # little memo
 # $@ = rule's name

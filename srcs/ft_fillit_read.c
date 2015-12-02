@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_fillit_read.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 11:56:01 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/02 19:09:40 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/02 15:32:58 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/02 19:09:35 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// exit, open, close, write, read, malloc et free
+#include "fillit.h"
+#include <stdio.h>
 
-#ifndef FILLIT_H
-# define FILLIT_H
+char	*t_read(char *file)
+{
+	int		fd;
+	char	*buff;
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <libft.h>
+	if((fd = open(file, O_RDONLY)) < 0)
+		ft_error();
+	buff = ft_strnew(BUFF_SIZE);
+	ft_bzero(buff, BUFF_SIZE);
+	if(read(fd, buff, BUFF_SIZE) < 0)
+		ft_error();
 
-# define BUFF_SIZE 546
-
-char		*t_read(char *file);
-void		ft_error(void);
-void		fillit(char *file);
-
-#endif
+	close(fd);
+	return (buff);
+}
