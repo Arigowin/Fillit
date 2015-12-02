@@ -1,7 +1,7 @@
 #include "fillit.h"
 
 
-int		t_is_l(char *t_mino)
+char    *t_is_l(char *t_mino)
 {
 	int		i;
 
@@ -10,20 +10,19 @@ int		t_is_l(char *t_mino)
 	{
 		if (t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 2] == '#'
 				&& t_mino[i + 5] == '#')
-			return (1);
+			return ("###\n#\0");
 		if (t_mino[i] == '#' && t_mino[i + 5] == '#' && t_mino[i + 10] == '#'
 				&& t_mino[i + 11] == '#')
-			return (1);
+			return ("#.\n#.\n##\0");
 		if (t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 6] == '#'
 				&& t_mino[i + 11] == '#')
-			return (1);
+			return ("##\n.#\n.#\0");
 		if (t_mino[i] == '#' && t_mino[i + 3] == '#' && t_mino[i + 4] == '#'
 				&& t_mino[i + 5] == '#')
-			return (1);
-		else
-			ft_error();
+			return ("..#\n###\0");
+        i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 int		t_isrev_l(char *t_mino)
@@ -35,18 +34,17 @@ int		t_isrev_l(char *t_mino)
 	{
 		if (t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 2] == '#'
 				&& t_mino[i + 7] == '#')
-			return (1);
+			return ("..#\n###\0");
 		if (t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 10] == '#')
-			return (1);
+			return ("##\n#.\n#.\n");
 		if (t_mino[i] == '#' && t_mino[i + 5] == '#' && t_mino[i + 9] == '#'
 				&& t_mino[i + 10] == '#')
-			return (1);
+			return (".#\n.#\n##\0");
 		if (t_mino[i] == '#' && t_mino[i + 5] == '#' && t_mino[i + 6] == '#'
 				&& t_mino[i + 7] == '#')
-			return (1);
-		else
-			ft_error();
+			return ("#..\n###\0");
+        i++;
 	}
 	return (0);
 }
@@ -60,18 +58,17 @@ int		t_is_t(char *t_mino)
 	{
 		if (t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 2] == '#'
 				&& t_mino[i + 6] == '#')
-			return (1);
+			return ("###\n.#.\0");
 		if (t_mino[i] == '#' && t_mino[i + 5] == '#' && t_mino[i + 6] == '#'
 				&& t_mino[i + 10] == '#')
-			return (1);
+			return ("#.\n##\n#.\0");
 		if (t_mino[i] == '#' && t_mino[i + 4] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 10] == '#')
-			return (1);
+			return (".#\n##\n.#\0");
 		if (t_mino[i] == '#' && t_mino[i + 4] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 6] == '#')
-			return (1);
-		else
-			ft_error();
+			return (".#.\n###\0");
+        i++;
 	}
 	return (0);
 }
