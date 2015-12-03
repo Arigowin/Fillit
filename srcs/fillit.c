@@ -22,7 +22,7 @@ void	fillit(char *file)
 		if (i % 21 == 0)
 		{
 			t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
-							file_content, i - 22, 20), j));
+							file_content, i - 21, 20), j));
 			j++;
 		}
 		i++;
@@ -32,6 +32,11 @@ void	fillit(char *file)
 						file_content, i - 21, 20), j));
 	t_minos[j + 1] = NULL;
 	t_algo(t_minos);
+	free(t_minos[0]);
+	free(t_minos[1]);
+	free(t_minos[2]);
+	free(t_minos[3]);
+	free(t_minos);
 }
 
 int		main(int ac, char **av)
@@ -40,5 +45,7 @@ int		main(int ac, char **av)
 		fillit(av[1]);
 	else
 		ft_error();
+	// leaks fillit avec line ci dessous
+	// while (1);
 	return (0);
 }

@@ -33,6 +33,7 @@ static char		*t_modif(char *t_mino, int l)
 	{
 		if (t_mino[i] == '#')
 			t_mino[i] = ('A' + l);
+		i++;
 	}
 	return (t_mino);
 }
