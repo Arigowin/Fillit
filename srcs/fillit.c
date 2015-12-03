@@ -31,7 +31,6 @@ void	fillit(char *file)
 
 int		main(int ac, char **av)
 {
-	write(1, "\033[40;31mok\n", 11);
 	if (ac == 2)
 	{
 		fillit(av[1]);
