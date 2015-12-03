@@ -24,26 +24,39 @@ static int		t_grid_verif(char *t_mino)
 	return (1);
 }
 
-char			*t_mino_verif(char *t_mino)
+static char		*t_modif(char *t_mino, int l)
+{
+	int		i;
+
+	i = 0;
+	while (t_mino[i] != '\0')
+	{
+		if (t_mino[i] == '#')
+			t_mino[i] = ('A' + l);
+	}
+	return (t_mino);
+}
+
+char			*t_mino_verif(char *t_mino, int l)
 {
 	char	*tmp;
 
 	if (t_grid_verif (t_mino) == 1)
 	{
 		if ((tmp = t_is_pipe(t_mino)) != NULL)
-			return (tmp);
+			return (t_modif(tmp, l));
 		if ((tmp = t_is_square(t_mino)) != NULL)
-			return (tmp);
+			return (t_modif(tmp, l));
 		if ((tmp = t_is_t(t_mino)) != NULL)
-			return (tmp);
+			return (t_modif(tmp, l));
 		if ((tmp = t_is_s(t_mino)) != NULL)
-			return (tmp);
+			return (t_modif(tmp, l));
 		if ((tmp = t_isrev_s(t_mino)) != NULL)
-			return (tmp);
+			return (t_modif(tmp, l));
 		if ((tmp = t_is_l(t_mino)) != NULL)
-			return (tmp);
+			return (t_modif(tmp, l));
 		if ((tmp = t_isrev_l(t_mino)) != NULL)
-			return (tmp);
+			return (t_modif(tmp, l));
 	}
 	ft_error();
 	return (NULL);
