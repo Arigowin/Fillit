@@ -6,7 +6,7 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 11:59:38 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 13:37:49 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/03 15:31:37 by avacher          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char		*t_read(char *file);
 void		ft_error(void);
 void		fillit(char *file);
 char		*t_mino_verif(char *t_mino);
-char		*t_is_ipipe(char *t_minoi);
+char		*t_is_pipe(char *t_minoi);
 char		*t_is_square(char *t_mino);
 char		*t_is_t(char *t_mino);
 char		*t_is_s(char *t_mino);
