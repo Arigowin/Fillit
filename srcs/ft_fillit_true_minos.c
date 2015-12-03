@@ -6,7 +6,7 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 12:01:27 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 13:37:51 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/03 15:31:40 by avacher          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char    *t_is_square(char *t_mino)
 	return (NULL);
 }
 
-char    *t_is_ipipe(char *t_mino)
+char    *t_is_pipe(char *t_mino)
 {
 	int		i;
 
