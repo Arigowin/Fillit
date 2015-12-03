@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> bibi
 #include "fillit.h"
 
 static int		t_grid_verif(char *t_mino)
