@@ -21,7 +21,7 @@ void	fillit(char *file)
 	{
 		if (i % 20 == 0)
 		{
-			t_minos[j] = t_mino_verif(ft_strsub(file_content, i - 20, i));
+			t_minos[j] = t_mino_verif(ft_strsub(file_content, i - 20, 20));
 			j++;
 		}
 		i++;
@@ -31,6 +31,7 @@ void	fillit(char *file)
 
 int		main(int ac, char **av)
 {
+	write(1, "\033[40;31mok\n", 11);
 	if (ac == 2)
 	{
 		fillit(av[1]);
