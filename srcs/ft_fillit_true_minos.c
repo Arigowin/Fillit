@@ -64,7 +64,7 @@ char    *t_isrev_s(char *t_mino)
 			return (ft_strdup("##.\n.##\0"));
 		if (i <= 8 && t_mino[i] == '#' && t_mino[i + 4] == '#'
 				&& t_mino[i + 5] == '#' && t_mino[i + 9] == '#')
-			return (ft_strdup(".#\n##\n#."));
+			return (ft_strdup(".#\n##\n#.\0"));
 		i++;
 	}
 	return (NULL);
