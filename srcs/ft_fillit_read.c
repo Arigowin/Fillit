@@ -11,7 +11,6 @@ char	*t_read(char *file)
 	ft_bzero(buff, BUFF_SIZE);
 	if(read(fd, buff, BUFF_SIZE) < 0)
 		ft_error();
-
 	close(fd);
 	return (buff);
 }

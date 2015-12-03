@@ -44,7 +44,6 @@ char			*t_mino_verif(char *t_mino)
 			return (tmp);
 		if ((tmp = t_isrev_l(t_mino)) != NULL)
 			return (tmp);
-		write(1, "abc\n", 4);
 	}
 	ft_error();
 	return (NULL);
