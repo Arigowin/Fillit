@@ -11,7 +11,6 @@ void	fillit(char *file)
 {
 	char	*file_content;
 	char	**t_minos;
-	char	*t_mino;
 	int		i;
 	int		j;
 
@@ -19,7 +18,6 @@ void	fillit(char *file)
 	j = 0;
 	file_content = t_read(file);
 	t_minos = ft_strnew(26);
-	t_mino = ft_strnew(20);
 	while (file_content[i])
 	{
 		if (i % 20 == 0)

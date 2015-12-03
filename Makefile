@@ -1,3 +1,11 @@
+
+# Add make libft
+# and add libft compile in this Makefile
+#
+#
+#
+
+
 NAME = fillit
 
 CPATH = srcs
