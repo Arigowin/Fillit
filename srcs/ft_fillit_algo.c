@@ -8,9 +8,10 @@ void		t_algo(char **t_mino)
 	int		j;
 
 	grid = ft_strnew(21);
+	grid = ft_bzero(21);
 	while (t_mino[j])
 	{
-
+		printf("%s", t_mino[j]);
 		j++;
 	}
 
