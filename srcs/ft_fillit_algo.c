@@ -12,7 +12,7 @@ void		t_algo(char **t_mino)
 	j = 0;
 	while (t_mino[j])
 	{
-		printf("%s\n\n", t_mino[j]);
+		printf("%s\n", t_mino[j]);
 		j++;
 	}
 
