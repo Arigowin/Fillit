@@ -6,7 +6,7 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 12:00:17 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 13:37:53 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/03 15:30:27 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char			*t_mino_verif(char *t_mino)
 			return (tmp);
 		if ((tmp = t_is_s(t_mino)) != NULL)
 			return (tmp);
-		if ((tmp + t_isrev_s(t_mino)) != NULL)
+		if ((tmp = t_isrev_s(t_mino)) != NULL)
 			return (tmp);
 		if ((tmp = t_is_l(t_mino)) != NULL)
 			return (tmp);
