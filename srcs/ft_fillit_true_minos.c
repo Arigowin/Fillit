@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_fillit_true_minos.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/03 12:01:27 by avacher           #+#    #+#             */
+/*   Updated: 2015/12/03 12:36:59 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 char    *t_is_square(char *t_mino)
@@ -9,10 +21,10 @@ char    *t_is_square(char *t_mino)
 	{
 		if (i <= 12, t_mino[i] == '#' && t_mino[i + 1] == '#'
 				&& t_mino[i + 5] == '#' && t_mino[i + 6] == '#')
-			return (1);
+			return ("##\n##\0");
 		i++;
 	}
-	return ("##\n##\0");
+	return (NULL);
 }
 
 char    *t_is_ipipe(char *t_mino)
@@ -40,13 +52,11 @@ char    *t_is_s(char *t_mino)
 	i = 0;
 	while (t_mino[i] != '\0')
 	{
-		if (i = 12, t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 4] == '#'
-				&& t_mino[i + 5] == '#')
-			return (".##\n##\0");
-		if (t_mino[i] == '#' && t_mino[i + 5] == '#' && t_mino[i + 6] == '#'
-				&& t_mino[i + 11] == '#')
+		if (i <= 12, t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 4] == '#' && t_mino[i + 5] == '#')
+			return (".##\n##.\0");
+		else if (i <= 7, t_mino[i] == '#' && t_mino[i + 5] == '#' && t_mino[i + 6] == '#'	&& t_mino[i + 11] == '#')
 			return ("#.\n##\n.#\0");
-        i++;
+		i++;
 	}
 	return (NULL);
 }
@@ -58,13 +68,11 @@ char    *t_isrev_s(char *t_mino)
 	i = 0;
 	while (t_mino[i] != '\0')
 	{
-		if (t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 6] == '#'
-				&& t_mino[i + 7] == '#')
+		if (i <= 11, t_mino[i] == '#' && t_mino[i + 1] == '#' && t_mino[i + 6] == '#' && t_mino[i + 7] == '#')
 			return ("##.\n.##\0");
-		if (t_mino[i] == '#' && t_mino[i + 4] == '#' && t_mino[i + 5] == '#'
-				&& t_mino[i + 9] == '#')
+		if (i <= 8, t_mino[i] == '#' && t_mino[i + 4] == '#' && t_mino[i + 5] == '#' && t_mino[i + 9] == '#')
 			return (".#\n##\n#.");
-        i++;
+		i++;
 	}
 	return (NULL);
 }
