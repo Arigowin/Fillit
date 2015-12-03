@@ -16,18 +16,21 @@ void	fillit(char *file)
 	i = 21;
 	j = 0;
 	file_content = t_read(file);
-	t_minos = (char **)malloc(sizeof(char*) * 26);
+	t_minos = (char **)malloc(sizeof(char*) * 27);
 	while (file_content[i] != '\0')
 	{
 		if (i % 21 == 0)
 		{
-			t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(file_content, i - 21, 20)));
+			t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
+							file_content, i - 22, 20), j));
 			j++;
 		}
 		i++;
 	}
 	if (file_content[i] == '\0')
-		t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(file_content, i - 21, 20)));
+		t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
+						file_content, i - 21, 20), j));
+	t_minos[j + 1] = NULL;
 	t_algo(t_minos);
 }
 
