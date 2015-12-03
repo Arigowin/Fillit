@@ -1,5 +1,4 @@
 #include "fillit.h"
-#include <stdio.h>
 
 void	ft_error(void)
 {
@@ -17,13 +16,12 @@ void	fillit(char *file)
 	i = 20;
 	j = 0;
 	file_content = t_read(file);
-	t_minos = ft_strnew(26);
+	t_minos = (char **)malloc(sizeof(char*) * 26);
 	while (file_content[i])
 	{
 		if (i % 20 == 0)
 		{
-			/* Recuperer return et passer le tout a t_algo */
-			t_minos[j] = t_grid_valid(ft_strsub(file_content, i - 20, i));
+			t_minos[j] = t_mino_verif(ft_strsub(file_content, i - 20, i));
 			j++;
 		}
 		i++;
