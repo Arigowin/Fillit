@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_fillit_verfis.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/03 12:00:17 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 15:30:27 by dolewski         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fillit.h"
 
 static int		t_grid_verif(char *t_mino)
@@ -23,7 +11,7 @@ static int		t_grid_verif(char *t_mino)
 	k = 0;
 	while (t_mino[i] != '\0')
 	{
-		if (t_mino[i] != '.' || t_mino[i] != '#')
+		if (t_mino[i] != '.' || t_mino[i] != '#' || t_mino[i] != '\n')
 			ft_error();
 		if (t_mino[i] == '#')
 			j++;
