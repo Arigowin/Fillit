@@ -1,20 +1,16 @@
 #include "fillit.h"
+#include <stdio.h>
 
 void		t_algo(char **t_mino)
 {
-	char	**grid;
-	char	*tmpgrid;
+	char	*grid;
 	int		i;
 	int		j;
 
-	grid = ft_strnew(5);
-	while (grid[i])
-	{
-		tmpgrid = ft_strnew(4);
-		grid[i] = tmpgrid;
-	}
+	grid = ft_strnew(21);
 	while (t_mino[j])
 	{
+
 		j++;
 	}
 
