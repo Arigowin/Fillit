@@ -6,7 +6,7 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 12:00:17 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 13:37:53 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/03 15:55:24 by avacher          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int		t_grid_verif(char *t_mino)
 	k = 0;
 	while (t_mino[i] != '\0')
 	{
-		if (t_mino[i] != '.' || t_mino[i] != '#')
+		if (t_mino[i] != '.' || t_mino[i] != '#' || t_mino[i] != '\n')
 			ft_error();
 		if (t_mino[i] == '#')
 			j++;
