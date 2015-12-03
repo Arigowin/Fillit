@@ -6,7 +6,7 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 12:00:17 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 12:37:54 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/03 13:37:53 by avacher          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,47 @@ static int		t_grid_verif(char *t_mino)
 {
 	int		i;
 	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
+	k = 0;
 	while (t_mino[i] != '\0')
 	{
 		if (t_mino[i] != '.' || t_mino[i] != '#')
-			exit(0);
+			ft_error();
 		if (t_mino[i] == '#')
 			j++;
+		if (t_mino[i] == '.')
+			k++;
 		i++;
 	}
-	if (i != 16 || j != 4)
-		exit(0);
+	if (i != 20 || j != 4 || k != 12)
+		ft_error();
 	return (1);
 }
 
-static int		t_mino_verif(char *t_mino)
+char			*t_mino_verif(char *t_mino)
 {
-	int		i;
+	char	*tmp;
 
-	i = 0;
-	while (t_mino[i] != '\0')
+	if (t_grid_verif (t_mino) == 1)
 	{
-		if (t_mino_true(t_mino) != 1)
-			exit(0);
-		i++;
+		if ((tmp = t_is_pipe(t_mino)) != NULL)
+			return (tmp);
+		if ((tmp = t_is_square(t_mino)) != NULL)
+			return (tmp);
+		if ((tmp = t_is_t(t_mino)) != NULL)
+			return (tmp);
+		if ((tmp = t_is_s(t_mino)) != NULL)
+			return (tmp);
+		if ((tmp + t_isrev_s(t_mino)) != NULL)
+			return (tmp);
+		if ((tmp = t_is_l(t_mino)) != NULL)
+			return (tmp);
+		if ((tmp = t_isrev_l(t_mino)) != NULL)
+			return (tmp);
 	}
-	return (1);
-}
-
-int				t_grid_valid(char *t_mino)
-{
-	if (t_grid_verif(t_mino) == 1 && t_mino_verif(t_mino) == 1)
-		return (1);
-	else
-		exit(0);
+	ft_error();
+	return (NULL);
 }
