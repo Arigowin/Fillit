@@ -6,7 +6,7 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 12:15:50 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 13:37:54 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/03 16:11:59 by avacher          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ char    *t_is_l(char *t_mino)
 	{
 		if (i <= 11 && t_mino[i] == '#' && t_mino[i + 1] == '#'
 				&& t_mino[i + 2] == '#' && t_mino[i + 5] == '#')
-			return ("###\n#..\0");
+			return (ft_strnew("###\n#..\0"));
 		else if (i <= 7 && t_mino[i] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 10] == '#' && t_mino[i + 11] == '#')
-			return ("#.\n#.\n##\0");
+			return (ft_strnew("#.\n#.\n##\0"));
 		else if (i <= 7 && t_mino[i] == '#' && t_mino[i + 1] == '#'
 				&& t_mino[i + 6] == '#' && t_mino[i + 11] == '#')
-			return ("##\n.#\n.#\0");
+			return (ft_strnew("##\n.#\n.#\0"));
 		else if (i <= 13 && t_mino[i] == '#' && t_mino[i + 3] == '#'
 				&& t_mino[i + 4] == '#' && t_mino[i + 5] == '#')
-			return ("..#\n###\0");
+			return (ft_strnew("..#\n###\0"));
         i++;
 	}
 	return (NULL);
@@ -46,16 +46,16 @@ char	*t_isrev_l(char *t_mino)
 	{
 		if (i <= 11 && t_mino[i] == '#' && t_mino[i + 1] == '#'
 				&& t_mino[i + 2] == '#' && t_mino[i + 7] == '#')
-			return ("###\n..#\0");
+			return (ft_strnew("###\n..#\0"));
 		else if (i <= 7 && t_mino[i] == '#' && t_mino[i + 1] == '#'
 				&& t_mino[i + 5] == '#' && t_mino[i + 10] == '#')
-			return ("##\n#.\n#.\n");
+			return (ft_strnew("##\n#.\n#.\n"));
 		else if (i <= 8 && t_mino[i] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 9] == '#' && t_mino[i + 10] == '#')
-			return (".#\n.#\n##\0");
+			return (ft_strnew(".#\n.#\n##\0"));
 		else if (i <= 11 && t_mino[i] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 6] == '#' && t_mino[i + 7] == '#')
-			return ("#..\n###\0");
+			return (ft_strnew("#..\n###\0"));
         i++;
 	}
 	return (NULL);
@@ -70,16 +70,16 @@ char	*t_is_t(char *t_mino)
 	{
 		if (i <= 11 && t_mino[i] == '#' && t_mino[i + 1] == '#'
 				&& t_mino[i + 2] == '#' && t_mino[i + 6] == '#')
-			return ("###\n.#.\0");
+			return (ft_strnew("###\n.#.\0"));
 		else if (i <= 7 && t_mino[i] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 6] == '#' && t_mino[i + 10] == '#')
-			return ("#.\n##\n#.\0");
+			return (ft_strnew("#.\n##\n#.\0"));
 		else if (i <= 8 && t_mino[i] == '#' && t_mino[i + 4] == '#'
 				&& t_mino[i + 5] == '#' && t_mino[i + 10] == '#')
-			return (".#\n##\n.#\0");
+			return (ft_strnew(".#\n##\n.#\0"));
 		else if (i <= 12 &&t_mino[i] == '#' && t_mino[i + 4] == '#'
 				&& t_mino[i + 5] == '#' && t_mino[i + 6] == '#')
-			return (".#.\n###\0");
+			return (ft_strnew(".#.\n###\0"));
         i++;
 	}
 	return (NULL);
