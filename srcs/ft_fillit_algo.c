@@ -13,10 +13,16 @@ static int		min_square(int t_minos_nb)
 	return (side_len);
 }
 
-char			*t_algo_recu(char *grid, int size)
+static int			t_algo_r(char **grid, char **piece, int size)
 {
+	if (t_algo_r(grid, piece + 1,  size) == 1)
+		return (1);
+	else
+	{
 
-	return (NULL);
+	}
+
+	return (0);
 }
 
 void			t_algo(char **t_mino)
@@ -25,6 +31,5 @@ void			t_algo(char **t_mino)
 
 	grid = ft_strnew(21);
 	ft_bzero(grid, 21);
-//	t_algo_recu(grid, 4);
-	if ()
+	t_algo_r(&grid, t_mino, 4);
 }
