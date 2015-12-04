@@ -1,10 +1,4 @@
 
-# Add make libft
-# and add libft compile in this Makefile
-# gcc -Wall -Wextra -Werror -I libft/includes -L libft -lft -I includes srcs/*
-#
-#
-
 CC =	/usr/bin/clang
 RM =	/bin/rm
 MAKE =	/usr/bin/make
