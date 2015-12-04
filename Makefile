@@ -1,3 +1,5 @@
+# for vimscrip
+# http://learnvimscriptthehardway.stevelosh.com/
 
 CC =	/usr/bin/clang
 RM =	/bin/rm
