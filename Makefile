@@ -37,27 +37,27 @@ all: $(OPATH) $(NAME)
 
 $(NAME): $(OFILES)
 	@echo "Building $@"
-	$(MAKE) -C $(LFTPATH)
-	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+	@$(MAKE) -C $(LFTPATH)
+	@$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 $(OPATH)/%.o: $(CPATH)/%.c
 	@echo "Creeating file $@"
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OPATH):
 	@echo "Ceating objs directory"
-	$(MKDIR) $@
+	@$(MKDIR) $@
 
 clean:
 	@echo "Deleting objs"
-	$(RM) -rf $(OPATH)
+	@$(RM) -rf $(OPATH)
 
 fclean: clean
 	@echo "Deleting $(NAME)"
-	$(RM) -f $(NAME)
+	@$(RM) -f $(NAME)
 
 lib.fclean:
-	$(MAKE) -C $(LIbPATH) fclean
+	@$(MAKE) -C $(LIbPATH) fclean
 
 re: fclean all
 
