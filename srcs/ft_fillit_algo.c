@@ -11,9 +11,27 @@ static int		min_square(int t_minos_nb)
 	return (side_len);
 }
 
-char			*t_algo_recu(char *grid, int size)
+static int		place_t_mino(char *grid, char **t_mino, int size, char mino_nb)
 {
 
+}
+
+char			*t_algo_recu(char *grid, char **t_mino, int size)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	while (grid[i])
+	{
+		if (grid[i] == '#' || /*fonction qui permet de placer les pieces return nope*/)
+			t_algo_recu(grid[i +1], t_mino[j], size);
+		if (/*fonction qui permet de placer les pieces return ok*/)
+			t_algo_recu(grid[i + 1], t_mino[j + 1], size);
+	}
+	if (t_mino != NULL || grid[i] == '\0')
+		t_algo_recu(grid[0], t_mino[j], size + 1)
 	return (NULL);
 }
 
