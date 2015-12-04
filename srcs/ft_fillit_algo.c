@@ -19,7 +19,9 @@ static int			t_algo_r(char **grid, char **piece, int size)
 		return (1);
 	else
 	{
-
+		// signifie plus de place
+		// donc replacer et piler
+		t_algo_r(grid, piece + 1, size);
 	}
 
 	return (0);
