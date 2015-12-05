@@ -16,7 +16,7 @@ static int		place_t_mino(char *grid, char **t_mino, int size, char mino_nb)
 
 }
 
-char			*t_algo_r(char **grid, char **t_mino, int size)
+char			*t_algo_r(char *grid, char **t_mino, int size)
 {
 	int		i;
 	int		j;
@@ -41,5 +41,5 @@ void			t_algo(char **t_mino)
 
 	grid = ft_strnew(21);
 	ft_bzero(grid, 21);
-	t_algo_r(&grid, t_mino, 4);
+	t_algo_r(grid, t_mino, 4);
 }
