@@ -9,7 +9,7 @@ static int			ft_mino_valid(char *t_mino, char mino_nb, int i)
 	if (t_mino[i] == '#' && i >= 0 && i <= 20 && token <= 4)
 	{
 		token++;
-		t_mino[i] = mino_nb + 'A';
+		t_mino[i] = mino_nb + 'a';
 		token += ft_mino_valid(t_mino, mino_nb, i + 1);
 		token += ft_mino_valid(t_mino, mino_nb, i - 1);
 		token += ft_mino_valid(t_mino, mino_nb, i + 5);
