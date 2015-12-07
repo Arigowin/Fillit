@@ -1,11 +1,12 @@
 #include "fillit.h"
+#include <stdio.h>
 
 static int			ft_mino_valid(char *t_mino, char mino_nb, int i)
 {
 	int		token;
 
 	token = 0;
-	if (t_mino[i] == '#' && i >= 0 && i <= 20)
+	if (t_mino[i] == '#' && i >= 0 && i <= 20 && token <= 4)
 	{
 		token++;
 		t_mino[i] = mino_nb + 'A';
@@ -28,8 +29,6 @@ static int			mino_grid_verif(char *t_mino, int mino_nb)
 	k = 0;
 	while (t_mino[i] != '\0')
 	{
-		if (t_mino[i] != '.' && t_mino[i] != '#' && t_mino[i] != '\n')
-			ft_error();
 		if (t_mino[i] == '.')
 			k++;
 		if (t_mino[i] == '#')
@@ -43,8 +42,6 @@ static int			mino_grid_verif(char *t_mino, int mino_nb)
 
 char			*t_mino_verif(char *t_mino, int mino_nb)
 {
-	char	*tmp;
-
 	if (mino_grid_verif(t_mino, mino_nb) == 1)
 		return (t_mino);
 	ft_error();

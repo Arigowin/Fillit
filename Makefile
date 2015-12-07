@@ -31,7 +31,7 @@ all: $(OPATH) $(NAME)
 
 $(NAME): $(OFILES)
 	@echo "Building $@"
-	@$(MAKE) -C $(LFTPATH)
+	@$(MAKE) -C $(LIBPATH)
 	@$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 $(OPATH)/%.o: $(CPATH)/%.c
