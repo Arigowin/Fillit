@@ -29,8 +29,8 @@ char			*t_algo_r(char *grid, char **t_mino, int size)
 	j = 0;
 	while (grid[i])
 	{
-		if (grid[i] == '#' || /*fonction qui permet de placer les pieces return nope*/)
-			t_algo_r(&grid[i +1], &t_mino[j], size);
+		if (grid[i] == '#' /* il n'y a pas de # seulement des lettre  */ || /*fonction qui permet de placer les pieces return nope*/)
+			t_algo_r(&grid[i + 1], &t_mino[j], size);
 		if (/*fonction qui permet de placer les pieces return ok*/)
 			t_algo_r(&grid[i + 1], &t_mino[j + 1], size);
 	}

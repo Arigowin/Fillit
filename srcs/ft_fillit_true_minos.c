@@ -1,7 +1,7 @@
 
 #include "fillit.h"
 
-char    *t_is_square(char *t_mino)
+char	*t_is_square(char *t_mino)
 {
 	int		i;
 
@@ -16,7 +16,7 @@ char    *t_is_square(char *t_mino)
 	return (NULL);
 }
 
-char    *t_is_pipe(char *t_mino)
+char	*t_is_pipe(char *t_mino)
 {
 	int		i;
 
@@ -34,7 +34,7 @@ char    *t_is_pipe(char *t_mino)
 	return (NULL);
 }
 
-char    *t_is_s(char *t_mino)
+char	*t_is_s(char *t_mino)
 {
 	int		i;
 
@@ -52,7 +52,7 @@ char    *t_is_s(char *t_mino)
 	return (NULL);
 }
 
-char    *t_isrev_s(char *t_mino)
+char	*t_isrev_s(char *t_mino)
 {
 	int		i;
 

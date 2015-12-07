@@ -6,14 +6,13 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 12:15:50 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/03 18:11:50 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/07 11:25:50 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-
-char    *t_is_l(char *t_mino)
+char	*t_is_l(char *t_mino)
 {
 	int		i;
 
@@ -32,7 +31,7 @@ char    *t_is_l(char *t_mino)
 		else if (i <= 13 && t_mino[i] == '#' && t_mino[i + 3] == '#'
 				&& t_mino[i + 4] == '#' && t_mino[i + 5] == '#')
 			return (ft_strdup("..#\n###\0"));
-        i++;
+		i++;
 	}
 	return (NULL);
 }
@@ -56,7 +55,7 @@ char	*t_isrev_l(char *t_mino)
 		else if (i <= 11 && t_mino[i] == '#' && t_mino[i + 5] == '#'
 				&& t_mino[i + 6] == '#' && t_mino[i + 7] == '#')
 			return (ft_strdup("#..\n###\0"));
-        i++;
+		i++;
 	}
 	return (NULL);
 }
@@ -77,10 +76,10 @@ char	*t_is_t(char *t_mino)
 		else if (i <= 8 && t_mino[i] == '#' && t_mino[i + 4] == '#'
 				&& t_mino[i + 5] == '#' && t_mino[i + 10] == '#')
 			return (ft_strdup(".#\n##\n.#\0"));
-		else if (i <= 12 &&t_mino[i] == '#' && t_mino[i + 4] == '#'
+		else if (i <= 12 && t_mino[i] == '#' && t_mino[i + 4] == '#'
 				&& t_mino[i + 5] == '#' && t_mino[i + 6] == '#')
 			return (ft_strdup(".#.\n###\0"));
-        i++;
+		i++;
 	}
 	return (NULL);
 }
