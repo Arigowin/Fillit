@@ -1,7 +1,7 @@
 #include "fillit.h"
 #include <stdio.h>
 
-static int			ft_mino_valid(char *t_mino, char mino_nb, int i)
+static int		ft_mino_valid(char *t_mino, char mino_nb, int i)
 {
 	int		token;
 
@@ -18,7 +18,7 @@ static int			ft_mino_valid(char *t_mino, char mino_nb, int i)
 	return (token);
 }
 
-static int			mino_grid_verif(char *t_mino, int mino_nb)
+static int		mino_grid_verif(char *t_mino, int mino_nb)
 {
 	int		i;
 	int		j;

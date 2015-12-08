@@ -31,12 +31,7 @@ void	fillit(char *file)
 		t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
 						file_content, i - 21, 20), j));
 	t_minos[j + 1] = NULL;
-	t_algo(t_minos, j);
-	free(t_minos[0]);
-	free(t_minos[1]);
-	free(t_minos[2]);
-	free(t_minos[3]);
-	free(t_minos);
+	t_algo(t_minos, j + 1);
 }
 
 int		main(int ac, char **av)

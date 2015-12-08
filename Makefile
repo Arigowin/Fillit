@@ -19,8 +19,6 @@ LIBS = -L $(LIBPATH) -lft
 SRC = fillit.c \
 	  ft_fillit_read.c \
 	  ft_fillit_algo.c \
-	  ft_fillit_true_minos.c \
-	  ft_fillit_true_minos2.c \
 	  ft_fillit_verifs.c
 
 OFILES = $(patsubst %.c, $(OPATH)/%.o, $(SRC))
@@ -35,11 +33,11 @@ $(NAME): $(OFILES)
 	@$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 $(OPATH)/%.o: $(CPATH)/%.c
-	@echo "Creeating file $@"
+	@echo "Creating file $@"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OPATH):
-	@echo "Ceating objs directory"
+	@echo "Creating objs directory"
 	@$(MKDIR) $@
 
 clean:

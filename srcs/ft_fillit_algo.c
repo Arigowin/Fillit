@@ -32,7 +32,6 @@ static int		place_mino(char *grid, char *t_mino, int size, int j, int i)
 		t += place_mino(grid, t_mino, size, j + (size + 1), i + 5);
 		t += place_mino(grid, t_mino, size, j - 1, i - 1);
 	}
-
 	return (t);
 }
 
@@ -59,7 +58,7 @@ static char		*enlargecpy(char *grid, int size)
 	j = 0;
 	i = 0;
 	tmp = NULL;
-	ft_bzero((tmp  = ft_strnew(size)), size);
+	ft_bzero((tmp = ft_strnew((size * size) + size)), (size * size) + size);
 	gridset(tmp, size);
 	while (grid[i])
 	{
@@ -112,8 +111,7 @@ static int		t_algo_r(char **grid, char **t_mino, int size, int i)
 		if (place_mino(*grid, t_mino[i], size, j, k) != 4)
 		{
 			k = 0;
-			resetgrids(*grid, t_mino[i], j, i);
-			j++;
+			resetgrids(*grid, t_mino[i], j++, i);
 			continue ;
 		}
 		if (t_algo_r(grid, t_mino, size, i + 1))
@@ -129,7 +127,7 @@ void			t_algo(char **t_mino, int mino_nb)
 	char	*grid;
 	int		size;
 
-	size = min_square(mino_nb + 1);
+	size = min_square(mino_nb);
 	grid = ft_strnew((size * size) + size);
 	gridset(grid, size);
 	while (!t_algo_r(&grid, t_mino, size, 0))
