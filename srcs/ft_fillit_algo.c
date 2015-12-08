@@ -17,26 +17,40 @@ static int		min_square(int t_minos_nb)
 	return (side_len);
 }
 
-static int		place_mino(char *grid, char *t_mino, int size, int i, int j)
+static int		place_mino(char *grid, char *t_mino, int size, int j, int i)
 {
 	int		t;
 
 	t = 0;
 	if (i >= 0 && i <= 20 && j >= 0 && j <= ((size * size) + size) &&
-			grid[j] == '.' && t_mino[i] >= 'a')
+			grid[j] == '.' && t_mino[i] >= 'a' && t_mino != NULL)
 	{
 		t_mino[i] -= 32;
 		grid[j] = t_mino[i];
 		t++;
-		t += place_mino(grid, t_mino, size, i + 1, j + 1);
-		t += place_mino(grid, t_mino, size, i + 5, j + (size + 1));
-		t += place_mino(grid, t_mino, size, i - 1, j - 1);
+		t += place_mino(grid, t_mino, size, j + 1, i + 1);
+		t += place_mino(grid, t_mino, size, j + (size + 1), i + 5);
+		t += place_mino(grid, t_mino, size, j - 1, i - 1);
 	}
-//	printf("%d\n", t);
+
 	return (t);
 }
-/*
-static char		*ft_enlargecpy(char *grid, int size)
+
+void			gridset(char *grid, int size)
+{
+	int		i;
+
+	i = 0;
+	while (i < (size * size) + size)
+	{
+		grid[i] = '.';
+		if (i > 0 && (i + 1) % (size + 1) == 0)
+			grid[i] = '\n';
+		i++;
+	}
+}
+
+static char		*enlargecpy(char *grid, int size)
 {
 	char	*tmp;
 	int		i;
@@ -46,6 +60,7 @@ static char		*ft_enlargecpy(char *grid, int size)
 	i = 0;
 	tmp = NULL;
 	ft_bzero((tmp  = ft_strnew(size)), size);
+	gridset(tmp, size);
 	while (grid[i])
 	{
 		if (grid[i] != '\n')
@@ -61,7 +76,7 @@ static char		*ft_enlargecpy(char *grid, int size)
 	}
 	return (tmp);
 }
-*/
+
 void			resetgrids(char *grid, char *t_mino, int i, int j)
 {
 	while (grid[i])
@@ -79,46 +94,34 @@ void			resetgrids(char *grid, char *t_mino, int i, int j)
 	}
 }
 
-static void		t_algo_r(char *grid, char **t_mino, int size, int i, int j)
+static int		t_algo_r(char **grid, char **t_mino, int size, int i)
 {
-//	char	*tmp;
 	int		k;
+	char	*cpy_grid;
+	int		j;
 
 	k = 0;
-	while (grid[j] && t_mino[k] != NULL)
+	if (t_mino[i] == NULL)
+		return (1);
+	cpy_grid = ft_strdup(*grid);
+	j = 0;
+	while ((*grid)[j])
 	{
-		while (!ft_isalpha(t_mino[k][i]))
-			i++;
-		printf("t_mino[k][i] = %c, grid[j] = %c\n", t_mino[k][i], grid[j]);
-		if (place_mino(grid, t_mino[k], size, i, j) != 4)
+		while (!ft_isalpha(t_mino[i][k]))
+			k++;
+		if (place_mino(*grid, t_mino[i], size, j, k) != 4)
 		{
-			resetgrids(grid, t_mino[k], 0, k);
-			t_algo_r(grid, t_mino, size, i, j + 1);
+			k = 0;
+			resetgrids(*grid, t_mino[i], j, i);
+			j++;
+			continue ;
 		}
-//		print_grid(grid);
-		k++;
+		if (t_algo_r(grid, t_mino, size, i + 1))
+			return (1);
+		*grid = ft_strdup(cpy_grid);
+		j++;
 	}
-/*	if (t_mino[j] != NULL && grid[i] == '\0')
-	{
-		tmp = ft_strdup(grid);
-		size++;
-		grid = ft_enlargecpy(tmp, ((size * size) + size) + 1);
-		t_algo_r(grid, t_mino, size + 1, 0, j);
-	}*/
-}
-
-void			gridset(char *grid, int size)
-{
-	int		i;
-
-	i = 0;
-	while (i < (size * size) + size)
-	{
-		grid[i] = '.';
-		if (i > 0 && (i + 1) % (size + 1) == 0)
-			grid[i] = '\n';
-		i++;
-	}
+	return (0);
 }
 
 void			t_algo(char **t_mino, int mino_nb)
@@ -126,14 +129,12 @@ void			t_algo(char **t_mino, int mino_nb)
 	char	*grid;
 	int		size;
 
-	size = min_square(mino_nb);
+	size = min_square(mino_nb + 1);
 	grid = ft_strnew((size * size) + size);
 	gridset(grid, size);
-	/*while(*t_mino)
+	while (!t_algo_r(&grid, t_mino, size, 0))
 	{
-		printf("%s\n", *t_mino);
-		t_mino++;
-	}*/
-	t_algo_r(grid, t_mino, size, 0, 0);
+		grid = enlargecpy(grid, ++size);
+	}
 	print_grid(grid);
 }
