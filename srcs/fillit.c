@@ -1,4 +1,5 @@
 #include "fillit.h"
+#include <stdio.h>
 
 void	ft_error(void)
 {
@@ -14,7 +15,7 @@ void	fillit(char *file)
 	int		j;
 
 	i = 20;
-	j = -1;
+	j = 0;
 	file_content = t_read(file);
 	t_minos = (char **)malloc(sizeof(char*) * 27);
 	while (file_content[++i] != '\0')

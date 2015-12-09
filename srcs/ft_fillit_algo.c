@@ -123,7 +123,7 @@ static int		t_algo_r(char **grid, char **t_mino, int i, int size)
 		if (place_mino(*grid, t_mino[i], j, k) != 4)
 		{
 			k = 0;
-			resetgrids(*grid, t_mino[i], j++, i);
+			resetgrids(*grid, t_mino[i], j, i);
 			continue ;
 		}
 		if (t_algo_r(grid, t_mino, i + 1, size))

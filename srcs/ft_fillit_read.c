@@ -1,4 +1,5 @@
 #include "fillit.h"
+#include <stdio.h>
 
 char	*t_read(char *file)
 {
@@ -11,7 +12,9 @@ char	*t_read(char *file)
 	ft_bzero(buff, BUFF_SIZE);
 	if (read(fd, buff, BUFF_SIZE) < 0)
 		ft_error();
-	if (ft_strlen(buff) < 20 && buff[BUFF_SIZE] != '\0')
+	if (ft_strlen(buff) < 20 || buff[BUFF_SIZE - 1] != '\0')
+		ft_error();
+	if (buff[ft_strlen(buff) - 1] == '\n' && buff[ft_strlen(buff) - 2] != '.')
 		ft_error();
 	close(fd);
 	return (buff);
