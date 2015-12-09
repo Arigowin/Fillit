@@ -6,7 +6,7 @@
 /*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 11:27:38 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/09 11:37:32 by avacher          ###   ########.fr       */
+/*   Updated: 2015/12/09 14:10:04 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_free_tbl_s(char **tbl)
 	int		i;
 
 	i = 0;
-	while (tbl != NULL)
+	while (tbl[i] != NULL)
 	{
 		free(tbl[i]);
 		i++;
