@@ -84,7 +84,7 @@ static char		*enlargecpy(char *grid, int size)
 		i++;
 		j++;
 	}
-//	free(grid);
+	free(grid);
 	return (tmp);
 }
 
@@ -139,7 +139,7 @@ void			t_algo(char **t_mino, int mino_nb)
 	char	*grid;
 	int		size;
 
-	size = min_square(mino_nb);
+	size = min_square(mino_nb = 1);
 	grid = ft_strnew((size * size) + size);
 	gridset(grid, size);
 	while (!t_algo_r(&grid, t_mino, 0, size))

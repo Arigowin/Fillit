@@ -31,7 +31,7 @@ void	fillit(char *file)
 						file_content, i - 21, 20), j));
 	t_minos[j + 1] = NULL;
 	free(file_content);
-	t_algo(t_minos, j + 1);
+	t_algo(t_minos, j);
 	ft_free_tbl_s(t_minos);
 }
 
