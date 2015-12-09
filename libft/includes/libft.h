@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:02:00 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 20:06:17 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/09 11:37:33 by avacher          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void				ft_lstpushback(t_list **alst, t_list *new);
 char				*ft_itoa_base(int n, int base);
 t_list				*ft_splittolst(const char *s, char c);
 int					ft_lstcount(t_list *lst);
+void				ft_free_tbl_s(char **tbl);
 
 #endif

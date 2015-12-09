@@ -13,11 +13,11 @@ void	fillit(char *file)
 	int		i;
 	int		j;
 
-	i = 21;
-	j = 0;
+	i = 20;
+	j = -1;
 	file_content = t_read(file);
 	t_minos = (char **)malloc(sizeof(char*) * 27);
-	while (file_content[i] != '\0')
+	while (file_content[++i] != '\0')
 	{
 		if (i % 21 == 0)
 		{
@@ -25,7 +25,6 @@ void	fillit(char *file)
 							file_content, i - 21, 20), j));
 			j++;
 		}
-		i++;
 	}
 	if (file_content[i] == '\0')
 		t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
@@ -33,10 +32,7 @@ void	fillit(char *file)
 	t_minos[j + 1] = NULL;
 	free(file_content);
 	t_algo(t_minos, j + 1);
-	i = 0;
-	while (i < j)
-		free(t_minos[i++]);
-	free(t_minos);
+	ft_free_tbl_s(t_minos);
 }
 
 int		main(int ac, char **av)
