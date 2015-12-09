@@ -128,6 +128,7 @@ static int		t_algo_r(char **grid, char **t_mino, int i, int size)
 		}
 		if (t_algo_r(grid, t_mino, i + 1, size))
 			return (1);
+		free(*grid);
 		*grid = ft_strdup(cpy_grid);
 	}
 	free(cpy_grid);

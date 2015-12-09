@@ -42,6 +42,7 @@ int		main(int ac, char **av)
 		fillit(av[1]);
 	else
 		ft_error();
+	while(1);
 	return (0);
 }
 	/* leaks fillit avec line ci dessous
