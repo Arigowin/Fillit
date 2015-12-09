@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2015/11/30 10:22:58 by dolewski         ###   ########.fr        #
+#    Updated: 2015/12/09 11:40:55 by avacher          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,8 @@ SRC = ft_memset.c \
 	  ft_lstpushback.c \
 	  ft_itoa_base.c \
 	  ft_splittolst.c \
-	  ft_lstcount.c
+	  ft_lstcount.c \
+	  ft_free_tbl_s.c
 
 OBJ = $(patsubst %.c, $(OPATH)/%.o, $(SRC))
 
