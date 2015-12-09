@@ -95,29 +95,28 @@ static void			resetgrids(char *grid, char *t_mino, int i, int j)
 
 static int		t_algo_r(char **grid, char **t_mino, int size, int i)
 {
-	int		k;
+	int		tbl[2];
 	char	*cpy_grid;
-	int		j;
 
-	k = 0;
 	if (t_mino[i] == NULL)
 		return (1);
 	cpy_grid = ft_strdup(*grid);
-	j = 0;
-	while ((*grid)[j])
+	tbl[0] = 0; // j
+	tbl[1] = 0; // k
+	while ((*grid)[tbl[0]])
 	{
-		while (!ft_isalpha(t_mino[i][k]))
-			k++;
-		if (place_mino(*grid, t_mino[i], size, j, k) != 4)
+		while (!ft_isalpha(t_mino[i][tbl[1]]))
+			tbl[1]++;
+		if (place_mino(*grid, t_mino[i], size, tbl) != 4)
 		{
-			k = 0;
-			resetgrids(*grid, t_mino[i], j++, i);
+			tbl[1] = 0;
+			resetgrids(*grid, t_mino[i], tbl[0]++, i);
 			continue ;
 		}
 		if (t_algo_r(grid, t_mino, size, i + 1))
 			return (1);
 		*grid = ft_strdup(cpy_grid);
-		j++;
+		tbl[0]++;
 	}
 	free(cpy_grid);
 	return (0);
