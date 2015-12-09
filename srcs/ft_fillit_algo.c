@@ -84,7 +84,7 @@ static char		*enlargecpy(char *grid, int size)
 		i++;
 		j++;
 	}
-	free(grid);
+//	free(grid);
 	return (tmp);
 }
 
