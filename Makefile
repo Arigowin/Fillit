@@ -19,7 +19,8 @@ LIBS = -L $(LIBPATH) -lft
 SRC = fillit.c \
 	  ft_fillit_read.c \
 	  ft_fillit_algo.c \
-	  ft_fillit_verifs.c
+	  ft_fillit_verifs.c \
+	  ft_fillit_grids.c
 
 OFILES = $(patsubst %.c, $(OPATH)/%.o, $(SRC))
 
