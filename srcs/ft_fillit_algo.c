@@ -22,7 +22,7 @@ static int			side_size(char *str)
 
 	i = 0;
 	while (str[i] != '\n')
-		i ++;
+		i++;
 	return (i);
 }
 
@@ -115,10 +115,11 @@ static int		t_algo_r(char **grid, char **t_mino, int i, int size)
 		return (1);
 	cpy_grid = ft_strdup(*grid);
 	j = -1;
-	k = -1;
+	k = 0;
 	while ((*grid)[++j])
 	{
-		while (!ft_isalpha(t_mino[i][++k]));
+		while (!ft_isalpha(t_mino[i][k]))
+			k++;
 		if (place_mino(*grid, t_mino[i], j, k) != 4)
 		{
 			k = 0;
