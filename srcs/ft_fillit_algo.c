@@ -4,7 +4,6 @@
 static void		print_grid(char *grid)
 {
 	write(1, grid, ft_strlen(grid));
-	write(1, "\n", 1);
 }
 
 static int		min_square(int t_minos_nb)
@@ -35,7 +34,7 @@ static int		place_mino(char *grid, char *t_mino, int size, int j, int i)
 	return (t);
 }
 
-void			gridset(char *grid, int size)
+static void			gridset(char *grid, int size)
 {
 	int		i;
 
@@ -73,10 +72,11 @@ static char		*enlargecpy(char *grid, int size)
 		i++;
 		j++;
 	}
+	free(grid);
 	return (tmp);
 }
 
-void			resetgrids(char *grid, char *t_mino, int i, int j)
+static void			resetgrids(char *grid, char *t_mino, int i, int j)
 {
 	while (grid[i])
 	{
@@ -119,6 +119,7 @@ static int		t_algo_r(char **grid, char **t_mino, int size, int i)
 		*grid = ft_strdup(cpy_grid);
 		j++;
 	}
+	free(cpy_grid);
 	return (0);
 }
 
@@ -135,4 +136,5 @@ void			t_algo(char **t_mino, int mino_nb)
 		grid = enlargecpy(grid, ++size);
 	}
 	print_grid(grid);
+	free(grid);
 }

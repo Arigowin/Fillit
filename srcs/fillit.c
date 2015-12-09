@@ -2,7 +2,7 @@
 
 void	ft_error(void)
 {
-	write(1, "error\n", 6);
+	write(2, "error\n", 6);
 	exit(EXIT_FAILURE);
 }
 
@@ -31,7 +31,12 @@ void	fillit(char *file)
 		t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
 						file_content, i - 21, 20), j));
 	t_minos[j + 1] = NULL;
+	free(file_content);
 	t_algo(t_minos, j + 1);
+	i = 0;
+	while (i < j)
+		free(t_minos[i++]);
+	free(t_minos);
 }
 
 int		main(int ac, char **av)
