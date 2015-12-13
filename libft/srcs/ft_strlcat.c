@@ -5,29 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 18:05:54 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 12:55:37 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:46:52 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/12 12:13:55 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t			ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	lensrc;
-	size_t	lendst;
+	size_t		dst_size;
+	size_t		src_size;
 
-	i = 0;
-	lensrc = ft_strlen(src);
-	lendst = ft_strlen(dst);
-	if (lendst > size)
-		return (lensrc + size);
-	while (i < size - lendst - 1)
-	{
-		dst[lendst + i] = src[i];
-		i++;
-	}
-	dst[lendst + i] = '\0';
-	return (lendst + lensrc);
+	dst_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
+	if (size < dst_size)
+		return (src_size + size);
+	while (*dst != '\0' && size--)
+		dst++;
+	while (size-- > 1 && *src != '\0')
+		*dst++ = *src++;
+	*dst = '\0';
+	return (dst_size + src_size);
 }

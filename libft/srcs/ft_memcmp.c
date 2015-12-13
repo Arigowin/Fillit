@@ -5,29 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:01:08 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/30 17:08:33 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:46:13 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/12 12:06:47 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int						ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t				i;
-	const unsigned char	*ps1;
-	const unsigned char	*ps2;
+	const unsigned char	*save_ptr;
+	const unsigned char	*save_ptr_2;
 
-	i = 0;
-	ps1 = (const unsigned char *)s1;
-	ps2 = (const unsigned char *)s2;
-	if (s1 == NULL && s2 == NULL)
+	save_ptr = s1;
+	save_ptr_2 = s2;
+	if (n == 0 || (s1 == NULL && s2 == NULL))
 		return (0);
-	while (i < n)
+	while (n--)
 	{
-		if (ps1[i] != ps2[i])
-			return (ps1[i] - ps2[i]);
-		i++;
+		if (*save_ptr != *save_ptr_2)
+			return (*save_ptr - *save_ptr_2);
+		save_ptr++;
+		save_ptr_2++;
 	}
 	return (0);
 }

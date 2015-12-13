@@ -6,10 +6,11 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 13:00:09 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 13:39:01 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/12 12:22:08 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 static size_t		nb_word(const char *s, char c)

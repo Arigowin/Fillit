@@ -6,10 +6,11 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:30:45 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 12:58:36 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/12 12:20:54 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 void	ft_strdel(char **as)

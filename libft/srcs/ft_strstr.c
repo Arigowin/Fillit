@@ -5,37 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 09:39:09 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/25 09:39:20 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:47:56 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:47:57 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char			*ft_strstr(const char *s1, const char *s2)
 {
-	int		i;
-	int		j;
-	char	*tmp;
+	const char	*save_ptr;
+	const char	*save_ptr_2;
 
-	i = 0;
-	j = 0;
-	if (ft_strlen(s2) == 0)
-		return ((char *)s1);
-	while (s1[i])
+	save_ptr_2 = s2;
+	if (*s2 == '\0')
+		return ((char*)s1);
+	while (*s1 != '\0')
 	{
-		if (s1[i] == s2[j])
+		save_ptr = s1;
+		while (*save_ptr == *save_ptr_2)
 		{
-			tmp = ((char *)s1) + i;
-			while (s1[i + j] == s2[j])
-			{
-				if (s2[j + 1] == '\0')
-					return (tmp);
-				j++;
-			}
-			j = 0;
+			save_ptr++;
+			save_ptr_2++;
+			if (*save_ptr_2 == '\0')
+				return ((char*)s1);
 		}
-		i++;
+		save_ptr_2 = s2;
+		s1++;
 	}
 	return (NULL);
 }

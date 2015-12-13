@@ -5,15 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 18:52:30 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/23 18:52:31 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:45:16 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:45:19 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void			ft_bzero(void *s, size_t n)
 {
-	if (n > 0)
-		s = ft_memset(s, '\0', n);
+	size_t		i;
+	char		*save_ptr;
+
+	i = 0;
+	save_ptr = s;
+	while (i < n)
+	{
+		*save_ptr = '\0';
+		i++;
+		save_ptr++;
+	}
 }

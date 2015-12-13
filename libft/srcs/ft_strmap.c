@@ -6,10 +6,11 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 21:03:44 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 13:04:47 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/12 12:21:12 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strmap(char const *s, char (*f)(char))

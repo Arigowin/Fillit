@@ -5,28 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 20:34:48 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/30 17:11:26 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:46:17 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/12 12:07:52 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void			*ft_memcpy(void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*pdst;
-	char	*psrc;
+	size_t		i;
+	char		*save_ptr;
+	const char	*save_ptr_2;
 
 	i = 0;
-	pdst = (char *)dst;
-	psrc = (char *)src;
-	if (n == 0 || dst == src)
-		return (pdst);
+	if (n == 0 || s1 == s2)
+		return (s1);
+	save_ptr = s1;
+	save_ptr_2 = s2;
 	while (i < n)
 	{
-		pdst[i] = psrc[i];
+		*save_ptr = *save_ptr_2;
+		save_ptr++;
+		save_ptr_2++;
 		i++;
 	}
-	return (pdst);
+	return (s1);
 }

@@ -5,19 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:15:05 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/30 16:37:19 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:47:11 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/11 12:09:14 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char			*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char	*ps1;
+	char		*save_ptr;
 
-	ps1 = s1;
-	while(*s1)
+	save_ptr = s1;
+	while (*s1)
 		s1++;
 	while (n > 0 && *s2)
 	{
@@ -27,5 +28,5 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		n--;
 	}
 	*s1 = '\0';
-	return (ps1);
+	return (save_ptr);
 }

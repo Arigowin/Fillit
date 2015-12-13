@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_tbl_s.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/09 11:27:38 by avacher           #+#    #+#             */
-/*   Updated: 2015/12/09 14:10:04 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 17:37:18 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/12 12:24:25 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 void	ft_free_tbl_s(char **tbl)

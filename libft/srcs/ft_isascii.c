@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 16:56:21 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/23 16:56:30 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:45:38 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/12 12:34:18 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int			ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }

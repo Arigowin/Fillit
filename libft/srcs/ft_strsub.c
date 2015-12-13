@@ -6,10 +6,11 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:04:24 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 13:10:48 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/12 12:21:46 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)

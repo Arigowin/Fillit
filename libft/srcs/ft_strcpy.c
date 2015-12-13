@@ -5,23 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:21:19 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 12:55:02 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:46:45 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:46:46 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+char		*ft_strcpy(char *s1, const char *s2)
 {
-	int	i;
+	char	*save_ptr;
 
-	i = 0;
-	while (src[i] != '\0')
+	save_ptr = s1;
+	while (*s2 != '\0')
 	{
-		dst[i] = src[i];
-		i++;
+		*s1 = *s2;
+		s2++;
+		s1++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	*s1 = '\0';
+	s1 = save_ptr;
+	return (s1);
 }

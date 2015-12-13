@@ -5,26 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:56:34 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/30 18:07:51 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:47:44 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:47:46 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+char			*ft_strncpy(char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t		i;
 
 	i = 0;
-	while (i < n)
+	while (s2[i] && i < n)
 	{
-		if (i >= ft_strlen(src))
-			dst[i] = '\0';
-		else
-			dst[i] = src[i];
+		s1[i] = s2[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	while (i < n)
+	{
+		s1[i] = '\0';
+		i++;
+	}
+	return (s1);
 }

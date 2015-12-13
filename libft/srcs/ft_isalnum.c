@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 16:47:13 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/23 16:47:14 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:45:28 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/12 12:33:50 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int			ft_isalnum(int c)
 {
-	if (ft_isdigit(c) || ft_isalpha(c))
-		return (1);
-	return (0);
+	return ((c >= '0' && c <= '9')
+		|| (c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'));
 }

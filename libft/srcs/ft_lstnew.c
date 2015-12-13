@@ -6,10 +6,11 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 20:31:58 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 19:40:21 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/12 12:23:11 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(const void *content, size_t content_size)

@@ -5,22 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 19:46:02 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/30 18:02:48 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:46:49 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:46:50 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char				*ft_strdup(const char *s1)
 {
-	size_t	len;
-	char	*s2;
+	size_t			i;
+	char			*duplicate;
+	size_t			str_len;
 
-	len = ft_strlen(s1);
-	s2 = (char*)malloc(sizeof(char) * (len + 1));
-	if (!s2)
+	i = 0;
+	str_len = ft_strlen(s1);
+	duplicate = (char*)malloc(str_len + 1);
+	if (!duplicate)
 		return (NULL);
-	ft_strcpy(s2, s1);
-	return (s2);
+	while (i < str_len)
+	{
+		duplicate[i] = s1[i];
+		i++;
+	}
+	duplicate[i] = '\0';
+	return (duplicate);
 }

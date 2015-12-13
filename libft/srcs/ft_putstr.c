@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:38:32 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/23 14:38:33 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/11 11:26:14 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr(char const *s)
 	size_t i;
 
 	i = 0;
-	while (i < ft_strlen(s))
+	while (s && i < ft_strlen(s))
 	{
 		ft_putchar(s[i]);
 		i++;

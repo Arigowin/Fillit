@@ -5,37 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 10:27:11 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/30 14:37:44 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:45:06 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:45:12 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
-	int	i;
-	int	res;
-	int	neg;
+	int		result;
+	int		i;
+	int		is_neg;
 
+	result = 0;
 	i = 0;
-	res = 0;
-	neg = 1;
-	while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\v' || str[i] == '\r' || str[i] == '\f'))
+	is_neg = 1;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r')
 		i++;
 	if (str[i] == '-')
+		is_neg = -1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] <= '9' && str[i] >= '0')
 	{
-		neg = -1;
+		result = result * 10;
+		result = result + (str[i] - '0');
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] && ft_isdigit(str[i]))
-	{
-		res *= 10;
-		res += str[i] - 48;
-		i++;
-	}
-	return (res * neg);
+	result = result * is_neg;
+	return (result);
 }

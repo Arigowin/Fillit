@@ -5,25 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 10:22:23 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/25 10:22:25 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:47:16 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:47:17 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int							ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t				i;
-	const unsigned char *ps1;
-	const unsigned char *ps2;
+	const unsigned char		*s_one;
+	const unsigned char		*s_two;
 
-	i = 0;
-	ps1 = (const unsigned char *)s1;
-	ps2 = (const unsigned char *)s2;
-	while (ps2[i] && ps1[i] == ps2[i] && i < n)
-		i++;
-	if (i >= n)
+	if (n == 0)
 		return (0);
-	return (ps1[i] - ps2[i]);
+	s_one = (const unsigned char*)s1;
+	s_two = (const unsigned char*)s2;
+	while (*s_one != '\0' && n > 1 && *s_one == *s_two)
+	{
+		s_one++;
+		s_two++;
+		n--;
+	}
+	return (*s_one - *s_two);
 }

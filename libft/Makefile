@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2015/12/12 18:54:36 by avacher          ###   ########.fr        #
+#    Updated: 2015/12/13 15:54:33 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,7 +105,7 @@ $(NAME): $(OBJ)
 	@$(AR) rc $@ $(OBJ)
 	@$(RANLIB) $@
 
-$(OPATH)/%.o: $(CPATH)/%.c $^
+$(OPATH)/%.o: $(CPATH)/%.c
 	@echo "Creating file $@"
 	@$(CC) $(CFLAGS) -c $< -o $@
 

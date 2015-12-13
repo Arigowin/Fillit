@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:23:25 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/23 17:23:26 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:48:04 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:48:08 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int			ft_toupper(int c)
 {
-	if (ft_isalpha(c) && c >= 97)
-		return (c - 32);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
 	return (c);
 }

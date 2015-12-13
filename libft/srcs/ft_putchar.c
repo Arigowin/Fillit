@@ -6,10 +6,11 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 14:38:20 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/26 18:12:53 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/12 12:22:30 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putchar(char c)

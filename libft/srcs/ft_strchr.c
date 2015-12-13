@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:08:13 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/30 17:50:45 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/09 18:21:08 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	s1 = (char *)s;
-	while (s1[i] != '\0')
+	if (s1)
 	{
+		while (s1[i] != '\0')
+		{
+			if (s1[i] == (char)c)
+				return (s1 + i);
+			i++;
+		}
 		if (s1[i] == (char)c)
 			return (s1 + i);
-		i++;
 	}
-	if (s1[i] == (char)c)
-		return (s1 + i);
 	return (NULL);
 }
