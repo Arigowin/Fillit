@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 15:52:34 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/13 15:52:37 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/17 13:02:38 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ void	fillit(char *file)
 		if (i % 21 == 0)
 		{
 			t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
-							file_content, i - 21, 20), j));
+							file_content, i - 21, 19), j));
 			j++;
 		}
 	}
 	if (file_content[i] == '\0')
 		t_minos[j] = ft_strdup(t_mino_verif(ft_strsub(
-						file_content, i - 21, 20), j));
+						file_content, i - 20, 19), j));
 	t_minos[j + 1] = NULL;
 	free(file_content);
 	t_algo(t_minos, j);

@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 15:56:29 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/13 15:56:30 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/17 13:01:05 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,15 @@ static int		mino_grid_verif(char *t_mino, int mino_nb)
 			j = ft_mino_valid(t_mino, mino_nb, i);
 		i++;
 	}
-	if (i != 20 || j != 4 || k != 12)
+	if (i != 19 || j != 4 || k != 12)
 		ft_error();
 	return (1);
 }
+#include <stdio.h>
 
 char			*t_mino_verif(char *t_mino, int mino_nb)
 {
+	printf("|%s|\n", t_mino);
 	if (mino_grid_verif(t_mino, mino_nb) == 1)
 		return (t_mino);
 	ft_error();
